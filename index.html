@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Twitter Archive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.html">
+        <img src="logo.png" alt="Logo" class="nav-logo">
+    </a>
+    <a href="index.html" class="active">Home</a>
+    <a href="Canada.html" class="">Canada</a>
+    <a href="U.S.html" class="">USA</a>
+    <a href="Europe.html" class="">Europe</a>
+    <a href="Culture.html" class="">Culture</a>
+    <a href="Asia.html" class="">World</a>
+    <a href="NewsBias.html" class="">News Bias</a>
+</nav>
+
+<main>
+    <h1></h1>
+    <img src="ScottAdams.jpg" alt="Welcome" class="hero-image">
+</main>
+
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+    function openLightbox(src) {
+        document.getElementById('lightbox').style.display = 'flex';
+        document.getElementById('lightbox-img').src = src;
+    }
+</script>
+
+</body>
+</html>
