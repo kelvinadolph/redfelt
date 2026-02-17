@@ -107,10 +107,10 @@ function Generate-Page($folderName) {
         $dateStr = $img.Date.ToString("MMMM dd, yyyy")
         $cardsHtml += @"
         <div class="card">
-            <img src="$($img.Path)" class="card-image" onclick="openLightbox('$($img.Path)')" alt="$($img.Filename)">
             <div class="card-content">
                 <div class="card-date">$dateStr</div>
             </div>
+            <img src="$($img.Path)" class="card-image" onclick="openLightbox('$($img.Path)')" alt="$($img.Filename)">
         </div>
 "@
     }

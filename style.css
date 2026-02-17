@@ -1,10 +1,10 @@
 :root {
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --text-color: #e0e0e0;
-    --accent-color: #bb86fc;
-    --secondary-text: #a0a0a0;
-    --nav-bg: rgba(30, 30, 30, 0.95);
+    --bg-color: #ffe6e6;
+    --card-bg: #fff0f0;
+    --text-color: #333333;
+    --accent-color: #d32f2f;
+    --secondary-text: #666666;
+    --nav-bg: rgba(255, 230, 230, 0.95);
 }
 
 body {
@@ -81,8 +81,10 @@ h1 {
 
 /* Grid Layout */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
     gap: 20px;
 }
 
@@ -101,15 +103,14 @@ h1 {
 .card-image {
     width: 100%;
     display: block;
-    aspect-ratio: auto;
-    object-fit: cover;
-    max-height: 500px;
-    /* Limit height for very tall screenshots */
+    height: auto;
+    object-fit: contain;
     cursor: pointer;
 }
 
 .card-content {
     padding: 15px;
+    background-color: #e3f2fd;
 }
 
 .card-title {
