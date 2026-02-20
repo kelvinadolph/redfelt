@@ -146,7 +146,8 @@ foreach ($folder in $dirOrder) {
 
 # Generate Home
 # Home is now just the static image
-$homeContentHtml = '<img src="ScottAdams.jpg" alt="Welcome" class="hero-image">'
+$homeContentHtml = '<img src="ScottAdams.jpg" alt="Welcome" class="hero-image">
+<img src="googleAppleNews.png" alt="Google Apple News" class="hero-image">'
 
 $navLinks = Generate-NavLinks "Home"
 # {0}=Title, {1}=NavLinks, {2}=ActiveHome, {3}=PageTitle, {4}=Content (Static Image)
