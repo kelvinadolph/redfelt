@@ -31,6 +31,7 @@ $htmlTemplate = @"
     </a>
     <a href="index.html" class="{2}">Home</a>
     {1}
+    <a href="Mail.html" class="{5}">Mail</a>
 </nav>
 
 <main>
@@ -119,8 +120,8 @@ function Generate-Page($folderName) {
     if ($images.Count -eq 0) { $cardsHtml = "<p>No images found.</p>" }
     
     $navLinks = Generate-NavLinks $folderName
-    # {0}=Title, {1}=NavLinks, {2}=ActiveHome, {3}=PageTitle, {4}=Content (Cards)
-    $pageContent = $htmlTemplate -f $displayName, $navLinks, "", $displayName, $cardsHtml
+    # {0}=Title, {1}=NavLinks, {2}=ActiveHome, {3}=PageTitle, {4}=Content (Cards), {5}=ActiveMail
+    $pageContent = $htmlTemplate -f $displayName, $navLinks, "", $displayName, $cardsHtml, ""
     
     $outputPath = "$folderName.html"
     Set-Content -Path $outputPath -Value $pageContent -Encoding UTF8
@@ -150,9 +151,26 @@ $homeContentHtml = '<img src="ScottAdams.jpg" alt="Welcome" class="hero-image">
 <img src="googleAppleNews.png" alt="Google Apple News" class="hero-image">'
 
 $navLinks = Generate-NavLinks "Home"
-# {0}=Title, {1}=NavLinks, {2}=ActiveHome, {3}=PageTitle, {4}=Content (Static Image)
-$homeContent = $htmlTemplate -f "Home", $navLinks, "active", "", $homeContentHtml
+# {0}=Title, {1}=NavLinks, {2}=ActiveHome, {3}=PageTitle, {4}=Content (Static Image), {5}=ActiveMail
+$homeContent = $htmlTemplate -f "Home", $navLinks, "active", "", $homeContentHtml, ""
 
 Set-Content -Path "index.html" -Value $homeContent -Encoding UTF8
 Write-Host "Generated index.html"
+
+# Generate Mail
+$mailContentHtml = '<div style="display: flex; justify-content: center; padding: 100px 20px;">
+    <a href="mailto:redfeltnews@gmail.com" title="Email RedFelt News" style="color: #c00000; transition: transform 0.2s; display: inline-block;" onmouseover="this.style.transform=''scale(1.1)''" onmouseout="this.style.transform=''scale(1)''">
+        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+    </a>
+</div>'
+
+$navLinksMail = Generate-NavLinks "Mail"
+$mailContent = $htmlTemplate -f "Mail", $navLinksMail, "", "Contact Us", $mailContentHtml, "active"
+
+Set-Content -Path "Mail.html" -Value $mailContent -Encoding UTF8
+Write-Host "Generated Mail.html"
+
 Write-Host "Done!"

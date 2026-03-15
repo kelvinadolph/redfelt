@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Twitter Archive</title>
+    <title>Mail - Twitter Archive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,20 +12,26 @@
     <a href="index.html">
         <img src="logo.png" alt="Logo" class="nav-logo">
     </a>
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html" class="">Home</a>
     <a href="Canada.html" class="">Canada</a>
     <a href="U.S.html" class="">USA</a>
     <a href="Europe.html" class="">Europe</a>
     <a href="Culture.html" class="">Culture</a>
     <a href="Asia.html" class="">World</a>
     <a href="NewsBias.html" class="">News Bias</a>
-    <a href="Mail.html" class="">Mail</a>
+    <a href="Mail.html" class="active">Mail</a>
 </nav>
 
 <main>
-    <h1></h1>
-    <img src="ScottAdams.jpg" alt="Welcome" class="hero-image">
-<img src="googleAppleNews.png" alt="Google Apple News" class="hero-image">
+    <h1>Contact Us</h1>
+    <div style="display: flex; justify-content: center; padding: 100px 20px;">
+    <a href="mailto:redfeltnews@gmail.com" title="Email RedFelt News" style="color: #c00000; transition: transform 0.2s; display: inline-block;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+    </a>
+</div>
 </main>
 
 <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
