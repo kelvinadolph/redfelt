@@ -1,0 +1,7 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+tmp/
+node_modules/
+.vscode/
